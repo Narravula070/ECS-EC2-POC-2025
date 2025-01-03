@@ -1,0 +1,24 @@
+{
+    "family": "poc_td",
+    "containerDefinitions": [
+        {
+            "name": "poc_cont",
+            "image": "latest",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "networkMode": "bridge",
+    "memory": "512",
+    "cpu": "256",
+    "executionRoleArn": "arn:aws:iam::266735821233:role/ecsTaskExecutionRole"
+}

@@ -3,8 +3,11 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: <TASK_DEFINITION>
+        TaskDefinition: "arn:aws:ecs:ap-south-1:266735821233:task-definition/poc_td:4"
         LoadBalancerInfo:
           ContainerName: "poc_cont"
-          ContainerPort: 3000
-        PlatformVersion: "LATEST"
+          ContainerPort: 8080
+Hooks:
+  - BeforeInstall: "arn:aws:lambda:ap-south-1:266735821233:function:Before-install"
+  - AfterInstall: "arn:aws:lambda:ap-south-1:266735821233:function:After-install"
+  - AfterAllowTestTraffic: "arn:aws:lambda:ap-south-1:266735821233:function:AfterAllowTestTraffic"

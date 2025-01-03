@@ -1,6 +1,6 @@
 [
   {
-    "name": "poc_repo",
+    "name": "poc_cont",
     "imageUri": "266735821233.dkr.ecr.ap-south-1.amazonaws.com/poc_repo:latest}"
   }
 ]
